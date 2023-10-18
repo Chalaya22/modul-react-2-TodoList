@@ -6,6 +6,12 @@ export class App extends Component {
   state = {
     todos,
   };
+  onDelayTodo = todoId => {
+    this.setState(prevState => ({
+      todos: prevState.todos.filter(todo => todo.id !== todoId),
+    }));
+  };
+
   render() {
     const { todos } = this.state;
     return (
